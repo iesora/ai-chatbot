@@ -1,10 +1,9 @@
 FROM node:18 AS builder
 WORKDIR /ai-chatbot-api
 COPY ./api/package*.json /ai-chatbot-api/
-COPY ./api/yarn.lock /ai-chatbot-api/
-RUN yarn
+RUN npm install
 COPY ./api /ai-chatbot-api/
-RUN yarn build
+RUN npm run build
 
 # for ncc
 
