@@ -1,9 +1,10 @@
 FROM node:18 AS builder
-WORKDIR /ai-chatbot-api
-COPY ./api/package*.json /ai-chatbot-api/
-RUN npm install
-COPY ./api /ai-chatbot-api/
-RUN npm run build
+WORKDIR /line-reservation-api
+COPY ./api/package*.json /line-reservation-api/
+COPY ./api/yarn.lock /line-reservation-api/
+RUN yarn
+COPY ./api /line-reservation-api/
+RUN yarn build
 
 # for ncc
 
