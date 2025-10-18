@@ -4,10 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: [
-      /^https?:\/\/(www\.)?your-wordpress-domain\.com$/,
-      'https://koudaunsou.jp/',
-    ],
+    origin: ['https://koudaunsou.jp/'],
     methods: ['POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: false,
