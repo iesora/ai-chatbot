@@ -37,7 +37,7 @@ function hnaa_chatbot_shortcode_modal($atts) {
         'theme' => 'light',
         'botname' => 'Assistant',
         'display' => 'inline',
-        'launcher_text' => 'チャット',
+        'launcher_text' => 'AIアシスタント',
         'launcher_position' => 'bottom-right',
         'start_open' => 'false',
     ), $atts, 'hnaa_chatbot');
