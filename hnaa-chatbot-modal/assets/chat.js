@@ -10,10 +10,10 @@
     div.innerText = str;
     return div.innerHTML;
   }
-  function linkify(text) {
-    return text.replace(
-      /(https?:\/\/[^\s]+)/g,
-      '<a href="$1" target="_blank">$1</a>'
+  function linkify(htmlEscapedText) {
+    return htmlEscapedText.replace(
+      /(https?:\/\/[^\s<>"']*[^\s<>"'\.,\)\]\}])/g,
+      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
     );
   }
 
@@ -49,7 +49,14 @@
         "hnaa-row " + (role === "user" ? "is-user" : "is-bot")
       );
       var bubble = h(row, "div", "hnaa-bubble");
-      bubble.innerHTML = escapeHTML(linkify(content));
+
+      // ✅ assistant（AI側）の返答はHTMLを許可
+      if (role === "assistant") {
+        bubble.innerHTML = linkify(content);
+      } else {
+        bubble.textContent = content;
+      }
+
       msgs.scrollTop = msgs.scrollHeight;
     }
     function setPending(v) {
