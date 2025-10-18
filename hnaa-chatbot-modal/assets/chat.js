@@ -50,13 +50,6 @@
       );
       var bubble = h(row, "div", "hnaa-bubble");
 
-      // ✅ assistant（AI側）の返答はHTMLを許可
-      if (role === "assistant") {
-        bubble.innerHTML = linkify(content);
-      } else {
-        bubble.textContent = content;
-      }
-
       msgs.scrollTop = msgs.scrollHeight;
     }
     function setPending(v) {
