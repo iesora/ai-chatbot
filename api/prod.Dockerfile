@@ -1,9 +1,9 @@
 FROM node:18 AS builder
-WORKDIR /labor-management-api
-COPY ./api/package*.json /labor-management-api/
-COPY ./api/yarn.lock /labor-management-api/
+WORKDIR /ai-chatbot-api
+COPY ./api/package*.json /ai-chatbot-api/
+COPY ./api/yarn.lock /ai-chatbot-api/
 RUN yarn
-COPY ./api /labor-management-api/
+COPY ./api /ai-chatbot-api/
 RUN yarn build
 
 # for ncc
