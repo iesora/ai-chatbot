@@ -27,7 +27,7 @@ const SYSTEM_PROMPT = `
 
 【出力例】
 お問い合わせをご希望ですね。  
-以下のリンクの画面で、質問内容が確認できます。  
+以下のリンクの画面で、質問内容が確認できます。
 
 https://koudaunsou.jp/contact/
 
